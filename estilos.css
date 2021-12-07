@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+h3{
+    text-align: center;
+}
+
+.felicitacion,
+.aviso{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    z-index: 10000;
+    background: #0000007e;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    border-radius: 9px;
+    background: #807c79;
+    color: #fff;
+    transition: .3s;
+}
+
+a:hover{
+    background: #5a5755;
+    transition: .3s;
+}
+
+.container__felicitacion{
+    background: #05be05;
+}
+
+.container__aviso{
+    background: #cf4b4b;
+}
+
+.container__felicitacion,
+.container__aviso{
+    width: 40%;
+    height: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 17px;
+}
+
+label{
+    position: relative;
+    width: 160px;
+    height: 80px;
+    cursor: pointer;
+}
+
+label input{
+    position: relative;
+    z-index: 1;
+    appearance: none;
+}
+
+label span{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff0000;
+    border-radius: 80px;
+    transition: .5s;
+    box-shadow: 0 15px 25px #ff000066;
+}
+
+label input:checked ~ span{
+    background: #05be05;
+    box-shadow: 0 15px 25px #05be0566;
+}
+
+label span i{
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    background: #fff;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    transition: .5s;
+}
+
+label input:checked ~ span i{
+    left: 84px;
+}
+
+label span i::before{
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fe0000;
+    box-shadow: 35px 0 0 #fe0000;
+    transition: .5s;
+}
+
+label input:checked ~ span i::before{
+    background: #05be05;
+    box-shadow: 35px 0 0 #05be05;
+}
+
+label span i::after{
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 6px;
+    background: #fe0000;
+    transition: .5s;
+    border-radius: 6px;
+}
+
+label input:checked ~ span i::after{
+    bottom: 12px;
+    height: 15px;
+    border-radius: 0;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    transition: .5s;
+    background: #05be05;
+}
